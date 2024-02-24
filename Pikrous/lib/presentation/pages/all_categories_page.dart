@@ -34,7 +34,7 @@ class _AllCategoriesState extends State<AllCategories> {
             Navigator.pop(context);
           },
         ),
-        title: const Text('Category'),
+        title: const Text('Food Category'),
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(40),
           child: Row(
