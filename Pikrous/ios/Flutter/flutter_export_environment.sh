@@ -1,14 +1,13 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=/Users/macbook/FlutterDev/flutter"
-export "FLUTTER_APPLICATION_PATH=/Users/macbook/Documents/PikrousProject/Pikrous"
+export "FLUTTER_ROOT=D:\Program Files\Flutter"
+export "FLUTTER_APPLICATION_PATH=D:\year3\semester1\Cs361-mobile_app\final_mobile\Pikrous"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
-export "FLUTTER_TARGET=/Users/macbook/Documents/PikrousProject/Pikrous/lib/main.dart"
+export "FLUTTER_TARGET=lib\main.dart"
 export "FLUTTER_BUILD_DIR=build"
 export "FLUTTER_BUILD_NAME=1.0.0"
 export "FLUTTER_BUILD_NUMBER=1"
-export "DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ==,RkxVVFRFUl9XRUJfQ0FOVkFTS0lUX1VSTD1odHRwczovL3d3dy5nc3RhdGljLmNvbS9mbHV0dGVyLWNhbnZhc2tpdC80YTU4NWI3OTI5NGU4MzBmYTg5YzI0OTI0ZDU4YTI3Y2M4ZmJmNDA2Lw=="
 export "DART_OBFUSCATION=false"
 export "TRACK_WIDGET_CREATION=true"
 export "TREE_SHAKE_ICONS=false"
-export "PACKAGE_CONFIG=/Users/macbook/Documents/PikrousProject/Pikrous/.dart_tool/package_config.json"
+export "PACKAGE_CONFIG=.dart_tool/package_config.json"
