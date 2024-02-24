@@ -52,10 +52,10 @@ class _AllCategoriesState extends State<AllCategories> {
                 ),
                 child: const Center(
                   child: Text(
-                    'Problems',
+                    'Foods',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 26,
                       fontWeight: FontWeight.w700,
                       color: primaryColor,
                     ),
@@ -63,28 +63,6 @@ class _AllCategoriesState extends State<AllCategories> {
                 ),
               ),
               const Spacer(),
-              SizedBox(
-                height: 40,
-                width: MediaQuery.of(context).size.width / 2,
-                child: Center(
-                  child: TextButton(
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: ((context) => const AllDoctors())));
-                    },
-                    child: const Text(
-                      'Doctors',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.black),
-                    ),
-                  ),
-                ),
-              ),
             ],
           ),
         ),
@@ -94,7 +72,7 @@ class _AllCategoriesState extends State<AllCategories> {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
-            const SearchBarInput(label: 'Search Problems'),
+            const SearchBarInput(label: 'Search food'),
             const SizedBox(
               height: 20,
             ),
@@ -116,7 +94,7 @@ class _AllCategoriesState extends State<AllCategories> {
                           margin: const EdgeInsets.symmetric(horizontal: 10),
                           width: 50,
                           height: 50,
-                          child: Image.asset('lib/assets/images/abortion.png'),
+                          child: Image.asset('lib/assets/images/food.png'),
                         ),
                         Container(
                           margin: const EdgeInsets.only(left: 30),

@@ -108,26 +108,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
               ),
             ),
             const Spacer(),
-            InkWell(
-              onTap: () {},
-              child: Container(
-                width: 60,
-                height: 60,
-                decoration: BoxDecoration(
-                  color: widget.index == 4 ? const Color(0xfffeeeeee) : Colors.white,
-                  borderRadius: BorderRadius.circular(25),
-                ),
-                child: Center(
-                  child: Image.asset(
-                    'lib/assets/images/robot.png',
-                    color: primaryColor,
-                    width: 40,
-                    height: 40,
-                  ),
-                ),
-              ),
-            ),
-            const Spacer(),
             Container(
               width: 60,
               height: 60,
