@@ -16,6 +16,7 @@ import 'package:pikrous/presentation/pages/all_doctors_page.dart';
 import 'package:pikrous/presentation/pages/auth/login_page.dart';
 import 'package:pikrous/presentation/pages/doctor_page.dart';
 import 'package:pikrous/presentation/pages/doctors/view_all_doctor.dart';
+import 'package:pikrous/presentation/pages/calendar_page.dart';
 
 import '../items/bottom_nav_bar.dart';
 import 'package:http/http.dart' as http;
@@ -272,7 +273,7 @@ class _HomePageState extends State<HomePage> {
                     SizedBox(
                       width: MediaQuery.of(context).size.width / 1.8,
                       child: const Text(
-                        'Welcome to Pikrous',
+                        'Welcome to Healtify',
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -311,7 +312,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     child: const Text(
-                      "Let's find \n your doctor!",
+                      "Eat Healthy, Stay Healthy, \n Live Healthy",
                       style: TextStyle(
                         fontSize: 26,
                         color: Colors.white,
@@ -340,7 +341,7 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             children: [
                               const SearchBarInput(
-                                label: 'Search Problems',
+                                label: 'Search Catagory',
                               ),
                               const SizedBox(
                                 height: 20,
@@ -423,7 +424,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   child: const Center(
                                     child: Text(
-                                      "Book Appointment",
+                                      "Create Food Schedule",
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                           color: Colors.white, fontSize: 24),

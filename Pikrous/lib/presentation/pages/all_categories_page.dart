@@ -12,9 +12,9 @@ class AllCategories extends StatefulWidget {
   State<AllCategories> createState() => _AllCategoriesState();
 }
 
-List <String> problems=[
-  'Abortion',
-  'Menstraution Problem',
+List<String> problems = [
+  'Grenn food',
+  'Menstraution Probm',
   'Uterus',
   'Pregnancy Issue',
   'Breast Issue',
@@ -28,12 +28,10 @@ class _AllCategoriesState extends State<AllCategories> {
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(
-            Icons
-                .arrow_back,
+            Icons.arrow_back,
           ),
           onPressed: () {
-            Navigator.pop(
-                context);
+            Navigator.pop(context);
           },
         ),
         title: const Text('Category'),
@@ -79,8 +77,10 @@ class _AllCategoriesState extends State<AllCategories> {
                     child: const Text(
                       'Doctors',
                       textAlign: TextAlign.center,
-                      style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: Colors.black),
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.black),
                     ),
                   ),
                 ),
