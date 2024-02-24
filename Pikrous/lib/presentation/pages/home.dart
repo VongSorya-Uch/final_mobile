@@ -30,18 +30,16 @@ class HomePage extends StatefulWidget {
 
 List<String> categories = [
   'All',
-  'Abortion',
-  'Uterus',
-  'Pregnancy Issue',
-  'Breast Cancer',
+  'Diet Food',
+  'Old Food',
+  'Vegan food',
 ];
 
 List<String> categoriesImage = [
   'lib/assets/images/all.png',
-  'lib/assets/images/abortion.png',
-  'lib/assets/images/uterus.png',
-  'lib/assets/images/pregnancy.jpg',
-  'lib/assets/images/breastcancer.png',
+  'lib/assets/images/diet_food.png',
+  'lib/assets/images/old_food.jpg',
+  'lib/assets/images/vegan.jpg',
 ];
 
 class _HomePageState extends State<HomePage> {
@@ -173,7 +171,7 @@ class _HomePageState extends State<HomePage> {
                                 builder: (context) => const CreateDoctor()));
                       },
                       child: Container(
-                        height: 100,
+                        height: 50,
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
@@ -314,7 +312,7 @@ class _HomePageState extends State<HomePage> {
                     child: const Text(
                       "Eat Healthy, Stay Healthy, \n Live Healthy",
                       style: TextStyle(
-                        fontSize: 26,
+                        fontSize: 23,
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
@@ -333,18 +331,18 @@ class _HomePageState extends State<HomePage> {
               ),
               body: Stack(
                 children: [
-                  SingleChildScrollView(
-                    child: Column(
+                  // SingleChildScrollView(
+                    Column(
                       children: [
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
                           child: Column(
                             children: [
                               const SearchBarInput(
                                 label: 'Search Catagory',
                               ),
                               const SizedBox(
-                                height: 20,
+                                height: 50,
                               ),
                               const Text(
                                 'Categories',
@@ -403,7 +401,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                               const SizedBox(
-                                height: 20,
+                                height: 200,
                               ),
                               InkWell(
                                 onTap: () {
@@ -411,7 +409,7 @@ class _HomePageState extends State<HomePage> {
                                     context,
                                     MaterialPageRoute(
                                       builder: ((context) =>
-                                          const AllDoctors()),
+                                          const CalendarPage()),
                                     ),
                                   );
                                 },
@@ -455,12 +453,6 @@ class _HomePageState extends State<HomePage> {
                                             color: const Color(0XFFFEEEEEE)),
                                         borderRadius:
                                             BorderRadius.circular(10)),
-                                    child: const Center(
-                                      child: Text(
-                                        'View Doctors',
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    ),
                                   ),
                                 ),
                               ),
@@ -471,9 +463,10 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         Container(
+                          height: 219,
                           padding: const EdgeInsets.symmetric(horizontal: 20),
                           child: ListView.builder(
-                            shrinkWrap: true,
+                            // shrinkWrap: false,
                             physics: const NeverScrollableScrollPhysics(),
                             itemCount: names.length,
                             itemBuilder: (context, index) {
@@ -510,7 +503,7 @@ class _HomePageState extends State<HomePage> {
                                             child: Stack(
                                               children: [
                                                 Image.asset(
-                                                  'lib/assets/images/me.png',
+                                                  'lib/assets/images/icon.png',
                                                   width: 70,
                                                   height: 70,
                                                 ),
@@ -662,9 +655,9 @@ class _HomePageState extends State<HomePage> {
                         )
                       ],
                     ),
-                  ),
+                  // ),
                   const Positioned(
-                    bottom: 20,
+                    bottom: 10,
                     left: 20,
                     child: BottomNavBar(index: 1),
                   ),
