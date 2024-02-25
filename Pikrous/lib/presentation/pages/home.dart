@@ -372,7 +372,7 @@ class _HomePageState extends State<HomePage> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: ((context) =>
-                                                    const DietFoodPage())));
+                                                    DietFoodPage())));
                                       } else if (index == 2) {
                                       } else if (index == 3) {
                                       } else if (index == 4) {
