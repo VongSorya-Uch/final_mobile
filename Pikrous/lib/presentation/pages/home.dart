@@ -17,6 +17,7 @@ import 'package:pikrous/presentation/pages/auth/login_page.dart';
 import 'package:pikrous/presentation/pages/doctor_page.dart';
 import 'package:pikrous/presentation/pages/doctors/view_all_doctor.dart';
 import 'package:pikrous/presentation/pages/calendar_page.dart';
+import 'package:pikrous/presentation/pages/all_dietbete_page.dart';
 
 import '../items/bottom_nav_bar.dart';
 import 'package:http/http.dart' as http;
@@ -32,7 +33,8 @@ List<String> categories = [
   'All',
   'Diet Food',
   'Old Food',
-  'Vegan food',
+  'Vegan Food',
+  'Dietbete Food',
 ];
 
 List<String> categoriesImage = [
@@ -40,6 +42,7 @@ List<String> categoriesImage = [
   'lib/assets/images/diet_food.png',
   'lib/assets/images/old_food.jpg',
   'lib/assets/images/vegan.jpg',
+  'lib/assets/images/diet.png',
 ];
 
 class _HomePageState extends State<HomePage> {
@@ -364,8 +367,20 @@ class _HomePageState extends State<HomePage> {
                                                 builder: ((context) =>
                                                     const AllCategories())));
                                       } else if (index == 1) {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: ((context) =>
+                                                    const AllCategories())));
                                       } else if (index == 2) {
-                                      } else if (index == 3) {}
+                                      } else if (index == 3) {
+                                      } else if (index == 4) {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: ((context) =>
+                                                    const AllDietbetes())));
+                                      }
                                     },
                                     child: Column(
                                       children: [
