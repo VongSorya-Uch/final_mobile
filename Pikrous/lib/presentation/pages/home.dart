@@ -365,7 +365,13 @@ class _HomePageState extends State<HomePage> {
                                                       const AllCategories())));
                                         } else if (index == 1) {
                                         } else if (index == 2) {
-                                        } else if (index == 3) {}
+                                        } else if (index == 3) {
+                                           Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: ((context) =>
+                                                      const AllCategories())));
+                                        }
                                       },
                                       child: Column(
                                         children: [
