@@ -21,28 +21,22 @@ class DietFoodPage extends StatelessWidget {
             Row(
               children: [
                 Expanded(
-                  child: Container(
-                    padding: EdgeInsets.all(8),
-                    child: Column(
-                      children: [
-                        Image.asset('assets/food_image1.png', width: 100, height: 100),
-                        SizedBox(height: 8),
-                        Text('Name of the Food', textAlign: TextAlign.center),
-                      ],
-                    ),
+                  child: _buildFoodContainer(
+                    imagePath: 'assets/food_image1.png',
+                    foodName: 'Healthy Salad',
+                    onPressed: () {
+                      // Handle detail button pressed for Healthy Salad
+                    },
                   ),
                 ),
-                SizedBox(width: 8),
+                SizedBox(width: 20),
                 Expanded(
-                  child: Container(
-                    padding: EdgeInsets.all(8),
-                    child: Column(
-                      children: [
-                        Image.asset('assets/food_image2.png', width: 100, height: 100),
-                        SizedBox(height: 8),
-                        Text('Name of the Food', textAlign: TextAlign.center),
-                      ],
-                    ),
+                  child: _buildFoodContainer(
+                    imagePath: 'assets/food_image2.png',
+                    foodName: 'Fruit Bowl',
+                    onPressed: () {
+                      // Handle detail button pressed for Fruit Bowl
+                    },
                   ),
                 ),
               ],
@@ -51,34 +45,71 @@ class DietFoodPage extends StatelessWidget {
             Row(
               children: [
                 Expanded(
-                  child: Container(
-                    padding: EdgeInsets.all(8),
-                    child: Column(
-                      children: [
-                        Image.asset('assets/food_image3.png', width: 100, height: 100),
-                        SizedBox(height: 8),
-                        Text('Name of the Food', textAlign: TextAlign.center),
-                      ],
-                    ),
+                  child: _buildFoodContainer(
+                    imagePath: 'assets/food_image3.png',
+                    foodName: 'Grilled Chicken',
+                    onPressed: () {
+                      // Handle detail button pressed for Grilled Chicken
+                    },
                   ),
                 ),
-                SizedBox(width: 8),
+                SizedBox(width: 20),
                 Expanded(
-                  child: Container(
-                    padding: EdgeInsets.all(8),
-                    child: Column(
-                      children: [
-                        Image.asset('assets/food_image4.png', width: 100, height: 100),
-                        SizedBox(height: 8),
-                        Text('Name of the Food', textAlign: TextAlign.center),
-                      ],
-                    ),
+                  child: _buildFoodContainer(
+                    imagePath: 'assets/food_image4.png',
+                    foodName: 'Vegetable Soup',
+                    onPressed: () {
+                      // Handle detail button pressed for Vegetable Soup
+                    },
                   ),
                 ),
               ],
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildFoodContainer({required String imagePath, required String foodName, required VoidCallback onPressed}) {
+    return Container(
+      padding: EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 2,
+            blurRadius: 5,
+            offset: Offset(0, 3),
+          ),
+        ],
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset(
+            imagePath,
+            width: 100,
+            height: 100,
+            fit: BoxFit.cover,
+          ),
+          SizedBox(height: 10),
+          Text(
+            foodName,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          SizedBox(height: 10),
+          ElevatedButton(
+            onPressed: onPressed,
+            child: Text('Details'),
+          ),
+        ],
       ),
     );
   }

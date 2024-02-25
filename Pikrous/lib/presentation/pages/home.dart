@@ -18,6 +18,7 @@ import 'package:pikrous/presentation/pages/doctor_page.dart';
 import 'package:pikrous/presentation/pages/doctors/view_all_doctor.dart';
 import 'package:pikrous/presentation/pages/calendar_page.dart';
 import 'package:pikrous/presentation/pages/all_dietbete_page.dart';
+import 'package:pikrous/presentation/pages/diet_food.dart';
 
 import '../items/bottom_nav_bar.dart';
 import 'package:http/http.dart' as http;
@@ -371,7 +372,7 @@ class _HomePageState extends State<HomePage> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: ((context) =>
-                                                    const AllCategories())));
+                                                    DietFoodPage())));
                                       } else if (index == 2) {
                                       } else if (index == 3) {
                                       } else if (index == 4) {
