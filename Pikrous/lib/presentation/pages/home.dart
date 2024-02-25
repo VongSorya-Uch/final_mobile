@@ -17,6 +17,7 @@ import 'package:pikrous/presentation/pages/auth/login_page.dart';
 import 'package:pikrous/presentation/pages/doctor_page.dart';
 import 'package:pikrous/presentation/pages/doctors/view_all_doctor.dart';
 import 'package:pikrous/presentation/pages/calendar_page.dart';
+import 'package:pikrous/presentation/pages/diet_food.dart';
 
 import '../items/bottom_nav_bar.dart';
 import 'package:http/http.dart' as http;
@@ -31,7 +32,7 @@ class HomePage extends StatefulWidget {
 List<String> categories = [
   'All',
   'Diet Food',
-  'Old Food',
+  'Eldery Food',
   'Vegan food',
 ];
 
@@ -364,8 +365,19 @@ class _HomePageState extends State<HomePage> {
                                                 builder: ((context) =>
                                                     const AllCategories())));
                                       } else if (index == 1) {
+                                         Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: ((context) =>
+                                                    DietFoodPage())));
                                       } else if (index == 2) {
-                                      } else if (index == 3) {}
+                                      } else if (index == 3) {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: ((context) =>
+                                                    DietFoodPage())));
+                                      } 
                                     },
                                     child: Column(
                                       children: [
