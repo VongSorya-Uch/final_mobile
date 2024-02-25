@@ -5,22 +5,22 @@ import 'package:pikrous/helper/utils/colors.dart';
 import 'package:pikrous/presentation/items/search_bar.dart';
 import 'package:pikrous/presentation/pages/all_doctors_page.dart';
 
-class AllCategories extends StatefulWidget {
-  const AllCategories({super.key});
+class AllDietbetes extends StatefulWidget {
+  const AllDietbetes({super.key});
 
   @override
-  State<AllCategories> createState() => _AllCategoriesState();
+  State<AllDietbetes> createState() => _AllDietbetesState();
 }
 
 List<String> problems = [
-  'Grenn food',
-  'Menstraution Probm',
-  'Uterus',
-  'Pregnancy Issue',
-  'Breast Issue',
+  'Dietbete Food',
+  'Dietbete Food',
+  'Dietbete Food',
+  'Dietbete Food',
+  'Dietbete Food',
 ];
 
-class _AllCategoriesState extends State<AllCategories> {
+class _AllDietbetesState extends State<AllDietbetes> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,7 +94,7 @@ class _AllCategoriesState extends State<AllCategories> {
                           margin: const EdgeInsets.symmetric(horizontal: 10),
                           width: 50,
                           height: 50,
-                          child: Image.asset('lib/assets/images/food.png'),
+                          child: Image.asset('lib/assets/images/Diet1.png'),
                         ),
                         Container(
                           margin: const EdgeInsets.only(left: 30),

@@ -100,7 +100,7 @@ class _CalendarPageState extends State<CalendarPage> {
                             const Align(
                               alignment: Alignment.centerLeft,
                               child: Text(
-                                'Your Appointments: ',
+                                'Your Food Plan: ',
                                 style: TextStyle(fontSize: 20),
                               ),
                             ),

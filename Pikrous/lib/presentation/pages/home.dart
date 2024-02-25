@@ -17,6 +17,7 @@ import 'package:pikrous/presentation/pages/auth/login_page.dart';
 import 'package:pikrous/presentation/pages/doctor_page.dart';
 import 'package:pikrous/presentation/pages/doctors/view_all_doctor.dart';
 import 'package:pikrous/presentation/pages/calendar_page.dart';
+import 'package:pikrous/presentation/pages/all_dietbete_page.dart';
 
 import '../items/bottom_nav_bar.dart';
 import 'package:http/http.dart' as http;
@@ -32,14 +33,16 @@ List<String> categories = [
   'All',
   'Diet Food',
   'Old Food',
-  'Vegan food',
+  'Vegan Food',
+  'Dietbete Food',
 ];
 
 List<String> categoriesImage = [
-  'lib/assets/images/all.png',
+  'lib/assets/images/foodlogo.jpg',
   'lib/assets/images/diet_food.png',
   'lib/assets/images/old_food.jpg',
   'lib/assets/images/vegan.jpg',
+  'lib/assets/images/diet.png',
 ];
 
 class _HomePageState extends State<HomePage> {
@@ -332,17 +335,102 @@ class _HomePageState extends State<HomePage> {
               body: Stack(
                 children: [
                   // SingleChildScrollView(
-                    Column(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
-                          child: Column(
-                            children: [
-                              const SearchBarInput(
-                                label: 'Search Catagory',
+                  Column(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: Column(
+                          children: [
+                            const SearchBarInput(
+                              label: 'Search Catagory',
+                            ),
+                            const SizedBox(
+                              height: 50,
+                            ),
+                            const Text(
+                              'Categories',
+                              style: TextStyle(fontSize: 20),
+                            ),
+                            Container(
+                              height: 120,
+                              margin: const EdgeInsets.only(top: 20),
+                              child: ListView.builder(
+                                scrollDirection: Axis.horizontal,
+                                itemCount: categoriesImage.length,
+                                itemBuilder: ((context, index) {
+                                  return GestureDetector(
+                                    onTap: () {
+                                      if (index == 0) {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: ((context) =>
+                                                    const AllCategories())));
+                                      } else if (index == 1) {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: ((context) =>
+                                                    const AllCategories())));
+                                      } else if (index == 2) {
+                                      } else if (index == 3) {
+                                      } else if (index == 4) {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: ((context) =>
+                                                    const AllDietbetes())));
+                                      }
+                                    },
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          margin: EdgeInsets.only(
+                                              left: index > 0 ? 23 : 0),
+                                          width: 80,
+                                          height: 80,
+                                          decoration: BoxDecoration(
+                                            color: const Color(0xfffeeeeee),
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                          ),
+                                          child: Container(
+                                            padding: const EdgeInsets.all(10),
+                                            child: Image.asset(
+                                                categoriesImage[index]),
+                                          ),
+                                        ),
+                                        Container(
+                                          width: 80,
+                                          margin: EdgeInsets.only(
+                                              left: index > 0 ? 23 : 0),
+                                          child: Text(
+                                            categories[index],
+                                            textAlign: TextAlign.center,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  );
+                                }),
                               ),
-                              const SizedBox(
+                            ),
+                            const SizedBox(
+                              height: 200,
+                            ),
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: ((context) =>
+                                        const CalendarPage()),
+                                  ),
+                                );
+                              },
+                              child: Container(
                                 height: 50,
+<<<<<<< HEAD
                               ),
                               const Text(
                                 'Categories',
@@ -404,263 +492,244 @@ class _HomePageState extends State<HomePage> {
                                       ),
                                     );
                                   }),
+=======
+                                width: MediaQuery.of(context).size.width,
+                                decoration: BoxDecoration(
+                                  color: primaryColor.withOpacity(0.63),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: const Center(
+                                  child: Text(
+                                    "Create Food Schedule",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 24),
+                                  ),
+>>>>>>> 9c9fd0bce04cbec7216a141f3d35e70084195b7e
                                 ),
                               ),
-                              const SizedBox(
-                                height: 200,
-                              ),
-                              InkWell(
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            Align(
+                              alignment: Alignment.centerRight,
+                              child: InkWell(
                                 onTap: () {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: ((context) =>
-                                          const CalendarPage()),
+                                      builder: (context) => const AllDoctors(),
                                     ),
                                   );
                                 },
                                 child: Container(
-                                  height: 50,
-                                  width: MediaQuery.of(context).size.width,
+                                  width: 100,
+                                  height: 30,
                                   decoration: BoxDecoration(
-                                    color: primaryColor.withOpacity(0.63),
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  child: const Center(
-                                    child: Text(
-                                      "Create Food Schedule",
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 24),
-                                    ),
-                                  ),
+                                      border: Border.all(
+                                          color: const Color(0XFFFEEEEEE)),
+                                      borderRadius: BorderRadius.circular(10)),
                                 ),
                               ),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              Align(
-                                alignment: Alignment.centerRight,
-                                child: InkWell(
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) =>
-                                            const AllDoctors(),
-                                      ),
-                                    );
-                                  },
-                                  child: Container(
-                                    width: 100,
-                                    height: 30,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(
-                                            color: const Color(0XFFFEEEEEE)),
-                                        borderRadius:
-                                            BorderRadius.circular(10)),
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                            ],
-                          ),
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                          ],
                         ),
-                        Container(
-                          height: 219,
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
-                          child: ListView.builder(
-                            // shrinkWrap: false,
-                            physics: const NeverScrollableScrollPhysics(),
-                            itemCount: names.length,
-                            itemBuilder: (context, index) {
-                              return InkWell(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => const DoctorPage(),
-                                    ),
-                                  );
-                                },
-                                child: Container(
-                                  margin: EdgeInsets.only(
-                                      top: index > 0 ? 15 : 0,
-                                      bottom:
-                                          index == names.length - 1 ? 80 : 0),
-                                  width: MediaQuery.of(context).size.width,
-                                  height: 140,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    border: Border.all(
-                                      color: const Color(0xfffeeeeee),
-                                      width: 5.0,
-                                    ),
+                      ),
+                      Container(
+                        height: 219,
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: ListView.builder(
+                          // shrinkWrap: false,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: names.length,
+                          itemBuilder: (context, index) {
+                            return InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const DoctorPage(),
                                   ),
-                                  child: Row(
-                                    children: [
-                                      Column(
-                                        children: [
-                                          Container(
-                                            padding: const EdgeInsets.only(
-                                                top: 15, left: 20),
-                                            child: Stack(
-                                              children: [
-                                                Image.asset(
-                                                  'lib/assets/images/icon.png',
-                                                  width: 70,
-                                                  height: 70,
-                                                ),
-                                                const Positioned(
-                                                  right: 0,
-                                                  top: 0,
-                                                  child: Icon(
-                                                    Icons.circle,
-                                                    color: Colors.greenAccent,
-                                                    size: 17,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                          const SizedBox(
-                                            height: 10,
-                                          ),
-                                          const Row(
+                                );
+                              },
+                              child: Container(
+                                margin: EdgeInsets.only(
+                                    top: index > 0 ? 15 : 0,
+                                    bottom: index == names.length - 1 ? 80 : 0),
+                                width: MediaQuery.of(context).size.width,
+                                height: 140,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  border: Border.all(
+                                    color: const Color(0xfffeeeeee),
+                                    width: 5.0,
+                                  ),
+                                ),
+                                child: Row(
+                                  children: [
+                                    Column(
+                                      children: [
+                                        Container(
+                                          padding: const EdgeInsets.only(
+                                              top: 15, left: 20),
+                                          child: Stack(
                                             children: [
-                                              Icon(
-                                                Icons.star,
-                                                color: Colors.greenAccent,
+                                              Image.asset(
+                                                'lib/assets/images/icon.png',
+                                                width: 70,
+                                                height: 70,
                                               ),
-                                              Text('4.9'),
+                                              const Positioned(
+                                                right: 0,
+                                                top: 0,
+                                                child: Icon(
+                                                  Icons.circle,
+                                                  color: Colors.greenAccent,
+                                                  size: 17,
+                                                ),
+                                              ),
                                             ],
                                           ),
-                                        ],
-                                      ),
-                                      const SizedBox(
-                                        width: 25,
-                                      ),
-                                      Container(
-                                        padding: const EdgeInsets.only(top: 15),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                        ),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        const Row(
                                           children: [
-                                            Row(
-                                              children: [
-                                                SizedBox(
-                                                  width: MediaQuery.of(context)
-                                                          .size
-                                                          .width /
-                                                      2,
+                                            Icon(
+                                              Icons.star,
+                                              color: Colors.greenAccent,
+                                            ),
+                                            Text('4.9'),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                    const SizedBox(
+                                      width: 25,
+                                    ),
+                                    Container(
+                                      padding: const EdgeInsets.only(top: 15),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Row(
+                                            children: [
+                                              SizedBox(
+                                                width: MediaQuery.of(context)
+                                                        .size
+                                                        .width /
+                                                    2,
+                                                child: Text(
+                                                  names[index],
+                                                  style: const TextStyle(
+                                                    fontSize: 20,
+                                                  ),
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                ),
+                                              ),
+                                              Container(
+                                                width: 30,
+                                                height: 30,
+                                                decoration: BoxDecoration(
+                                                    color: const Color(
+                                                        0xfffeeeeee),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10)),
+                                                child: const Center(
                                                   child: Text(
-                                                    names[index],
-                                                    style: const TextStyle(
-                                                      fontSize: 20,
-                                                    ),
-                                                    overflow:
-                                                        TextOverflow.ellipsis,
+                                                    '\$15',
+                                                    textAlign: TextAlign.center,
                                                   ),
                                                 ),
+                                              )
+                                            ],
+                                          ),
+                                          const SizedBox(height: 10),
+                                          Text(expertise[index]),
+                                          const SizedBox(height: 10),
+                                          SizedBox(
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width /
+                                                2,
+                                            child: Row(
+                                              children: [
                                                 Container(
-                                                  width: 30,
+                                                  width: 100,
                                                   height: 30,
+                                                  decoration: BoxDecoration(
+                                                    color: const Color(
+                                                        0xfffeeeeee),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10),
+                                                  ),
+                                                  child: const Center(
+                                                    child: Text(
+                                                      'Appointment',
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                    ),
+                                                  ),
+                                                ),
+                                                const Spacer(),
+                                                Container(
+                                                  height: 30,
+                                                  width: 30,
                                                   decoration: BoxDecoration(
                                                       color: const Color(
                                                           0xfffeeeeee),
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               10)),
-                                                  child: const Center(
-                                                    child: Text(
-                                                      '\$15',
-                                                      textAlign:
-                                                          TextAlign.center,
-                                                    ),
+                                                  child: const Icon(
+                                                    Icons.message,
+                                                    color: Color(0xfffb28cff),
                                                   ),
-                                                )
+                                                ),
+                                                const Spacer(),
+                                                Container(
+                                                  height: 30,
+                                                  width: 30,
+                                                  decoration: BoxDecoration(
+                                                    color: const Color(
+                                                        0xfffeeeeee),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10),
+                                                  ),
+                                                  child: const Icon(
+                                                    Icons
+                                                        .favorite_border_outlined,
+                                                    color: Color(0xfffff9a9a),
+                                                  ),
+                                                ),
                                               ],
                                             ),
-                                            const SizedBox(height: 10),
-                                            Text(expertise[index]),
-                                            const SizedBox(height: 10),
-                                            SizedBox(
-                                              width: MediaQuery.of(context)
-                                                      .size
-                                                      .width /
-                                                  2,
-                                              child: Row(
-                                                children: [
-                                                  Container(
-                                                    width: 100,
-                                                    height: 30,
-                                                    decoration: BoxDecoration(
-                                                      color: const Color(
-                                                          0xfffeeeeee),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10),
-                                                    ),
-                                                    child: const Center(
-                                                      child: Text(
-                                                        'Appointment',
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  const Spacer(),
-                                                  Container(
-                                                    height: 30,
-                                                    width: 30,
-                                                    decoration: BoxDecoration(
-                                                        color: const Color(
-                                                            0xfffeeeeee),
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(10)),
-                                                    child: const Icon(
-                                                      Icons.message,
-                                                      color: Color(0xfffb28cff),
-                                                    ),
-                                                  ),
-                                                  const Spacer(),
-                                                  Container(
-                                                    height: 30,
-                                                    width: 30,
-                                                    decoration: BoxDecoration(
-                                                      color: const Color(
-                                                          0xfffeeeeee),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10),
-                                                    ),
-                                                    child: const Icon(
-                                                      Icons
-                                                          .favorite_border_outlined,
-                                                      color: Color(0xfffff9a9a),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ],
-                                        ),
+                                          ),
+                                        ],
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
-                              );
-                            },
-                          ),
+                              ),
+                            );
+                          },
                         ),
-                        const SizedBox(
-                          height: 20,
-                        )
-                      ],
-                    ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      )
+                    ],
+                  ),
                   // ),
                   const Positioned(
                     bottom: 10,
